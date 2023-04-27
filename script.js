@@ -6,8 +6,14 @@ function addTask() {
     if(inputBox.value === ""){
         alert("please write something");
     }else{
-        let lis = document.createElement("li");
-        lis.innerHTML = inputBox.value;
-        listContainer.appendChild(lis)
+        let li = document.createElement("li");
+        li.innerText = inputBox.value;
+        listContainer.appendChild(li);
+
+        // delete task
+        let dev = document.createElement("dev");
+        dev.innerText = "\u00d7";
+        li.appendChild(dev)
     }
+    inputBox.value = ""
 }

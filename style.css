@@ -85,12 +85,12 @@ ul li::before{
     left: 8px;
 }
 
-ul li#checked{
+ul li.checked{
     color: #555;
     text-decoration: line-through;
 }
 
-ul li#checked::before{
+ul li.checked::before{
     background-image: url(./img/icons8-checkmark-48.png);
 }
 
@@ -104,6 +104,7 @@ ul li dev{
     color: #555;
     line-height: 40px;
     text-align: center;
+    border-radius: 50%;
 }
 
 ul li dev:hover {

@@ -16,13 +16,29 @@ function addTask() {
         li.appendChild(dev)
     }
     inputBox.value = ""
+    saveData()
 }
 
 // other opstion
 listContainer.addEventListener("click" , function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
-    }else if(e.target.tagName === "DEV"){
+        saveData()
+    }
+    else if(e.target.tagName === "DEV"){
         e.target.parentElement.remove()
+        saveData()
     }
 },false)
+
+// save data
+function saveData(){
+    localStorage.setItem("data" , listContainer.innerHTML)
+}
+
+
+//show task
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem("data")
+}
+showTask()
